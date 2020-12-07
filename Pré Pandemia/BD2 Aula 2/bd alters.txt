@@ -1,0 +1,9 @@
+ALTER TABLE `database`.`palestra` 
+ADD INDEX `local_fk_idx` (`local_fk` ASC) VISIBLE;
+;
+ALTER TABLE `database`.`palestra` 
+ADD CONSTRAINT `local_fk`
+  FOREIGN KEY (`local_fk`)
+  REFERENCES `database`.`localizacao` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
